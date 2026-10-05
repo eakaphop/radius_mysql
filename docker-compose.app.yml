@@ -1,0 +1,39 @@
+# Containerizes ONLY backend + frontend. MariaDB, FreeRADIUS and nginx stay
+# as the existing host services (see CLAUDE.md "Infrastructure") — this file
+# never starts or touches them. Not for local dev without the real target
+# DB/FreeRADIUS; for that use docker-compose.dev.yml instead.
+#
+# network_mode: host because MariaDB and radclient's MikroTik targets are
+# typically only reachable from the host's own network namespace (MariaDB
+# bound to 127.0.0.1 per docs/environment.md, MikroTik on the LAN) — bridge
+# networking would need extra port-forwarding/gateway config for both paths.
+# It also lets frontend's nginx reach the backend via 127.0.0.1:8001 (see
+# frontend/nginx.conf) and lets the Caddy stack in docker-compose.caddy.yml
+# reach frontend via 127.0.0.1:5174, all without any published ports. This
+# only works on Linux hosts (not Docker Desktop on macOS/Windows).
+#
+# Usage:
+#   cp .env.example backend/.env   # fill in real DB_PASSWORD, APP_SECRET_KEY, etc.
+#   docker compose -f docker-compose.app.yml build
+#   docker compose -f docker-compose.app.yml up -d
+#
+# frontend/Dockerfile's default VITE_API_BASE_URL is the relative path
+# "/api/v1" — nginx.conf proxies that to the backend on the same origin, so
+# the default build works for both this plain-HTTP setup AND the HTTPS
+# entrypoint in docker-compose.caddy.yml unmodified. Only pass
+# --build-arg VITE_API_BASE_URL=... if you need the frontend to call a
+# backend NOT reachable through its own nginx proxy.
+services:
+  backend:
+    build: ./backend
+    network_mode: host
+    restart: unless-stopped
+    env_file:
+      - backend/.env
+
+  frontend:
+    build: ./frontend
+    network_mode: host
+    restart: unless-stopped
+    depends_on:
+      - backend

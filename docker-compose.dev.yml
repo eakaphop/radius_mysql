@@ -1,0 +1,33 @@
+# Local MariaDB for development/testing ONLY, when working away from the real
+# target machine (see docs/decisions.md, 2026-09-13). Never used in production —
+# the production stack connects to the MariaDB that already runs on the
+# target host (see CLAUDE.md section 2).
+#
+# Usage:
+#   docker compose -f docker-compose.dev.yml up -d
+#   # then point backend/.env at DB_HOST=127.0.0.1, DB_PORT=3306,
+#   # DB_NAME=radius, DB_USER=root, DB_PASSWORD=devpassword (dev only)
+#
+# docs/freeradius-schema.sql is currently a placeholder (see that file) — fill
+# it in with the real FreeRADIUS schema before relying on this for anything
+# beyond backend skeleton smoke-testing.
+services:
+  mariadb:
+    image: mariadb:11
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: devpassword
+      MARIADB_DATABASE: radius
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb_dev_data:/var/lib/mysql
+      - ./docs/freeradius-schema.sql:/docker-entrypoint-initdb.d/01-freeradius-schema.sql:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mariadb_dev_data:

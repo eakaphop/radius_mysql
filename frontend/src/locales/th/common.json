@@ -1,0 +1,351 @@
+{
+  "app": {
+    "title": "RADIUS Manager"
+  },
+  "theme": {
+    "light": "เปลี่ยนเป็นโหมดสว่าง",
+    "dark": "เปลี่ยนเป็นโหมดมืด"
+  },
+  "nav": {
+    "dashboard": "แดชบอร์ด",
+    "users": "ผู้ใช้",
+    "groups": "กลุ่ม",
+    "profiles": "Bandwidth Profiles",
+    "nas": "NAS",
+    "sessions": "Session ออนไลน์",
+    "accounting": "Accounting",
+    "postauth": "Auth Log",
+    "audit": "Audit Log",
+    "settings": "ตั้งค่า"
+  },
+  "common": {
+    "save": "บันทึก",
+    "cancel": "ยกเลิก",
+    "edit": "แก้ไข",
+    "delete": "ลบ",
+    "remove": "นำออก",
+    "close": "ปิด",
+    "search": "ค้นหา",
+    "details": "รายละเอียด",
+    "from": "จากวันที่",
+    "to": "ถึงวันที่",
+    "required": "กรุณากรอกข้อมูลนี้",
+    "invalid": "ค่าไม่ถูกต้อง",
+    "unknownError": "เกิดข้อผิดพลาด กรุณาลองใหม่",
+    "yes": "ใช่",
+    "no": "ไม่"
+  },
+  "table": {
+    "loading": "กำลังโหลด...",
+    "empty": "ไม่พบข้อมูล",
+    "error": "โหลดข้อมูลไม่สำเร็จ",
+    "total": "ทั้งหมด {{count}} รายการ",
+    "previous": "ก่อนหน้า",
+    "next": "ถัดไป",
+    "pageOf": "หน้า {{page}} / {{lastPage}}"
+  },
+  "attributes": {
+    "attribute": "Attribute",
+    "operator": "Operator",
+    "value": "ค่า",
+    "addRow": "เพิ่มแถว"
+  },
+  "serviceType": {
+    "pppoe": "PPPoE",
+    "hotspot": "Hotspot",
+    "both": "PPPoE + Hotspot",
+    "unknown": "ไม่ระบุ"
+  },
+  "auth": {
+    "logout": "ออกจากระบบ",
+    "roles": {
+      "admin": "ผู้ดูแลระบบ",
+      "viewer": "ผู้ดูอย่างเดียว"
+    },
+    "login": {
+      "title": "เข้าสู่ระบบ",
+      "username": "ชื่อผู้ใช้",
+      "password": "รหัสผ่าน",
+      "submit": "เข้าสู่ระบบ",
+      "required": "กรุณากรอกข้อมูลนี้",
+      "unknownError": "เข้าสู่ระบบไม่สำเร็จ กรุณาลองใหม่"
+    }
+  },
+  "users": {
+    "title": "ผู้ใช้ RADIUS",
+    "create": "เพิ่มผู้ใช้",
+    "enable": "เปิดใช้งาน",
+    "disable": "ปิดใช้งาน",
+    "changePassword": "เปลี่ยนรหัสผ่าน",
+    "searchPlaceholder": "ค้นหาชื่อผู้ใช้",
+    "groupFilterPlaceholder": "กรองตามกลุ่ม",
+    "confirmDelete": "ลบผู้ใช้ {{username}} ใช่หรือไม่? (ประวัติ accounting จะยังอยู่)",
+    "status": {
+      "all": "ทุกสถานะ",
+      "active": "ใช้งานอยู่",
+      "disabled": "ปิดใช้งาน",
+      "expired": "หมดอายุ"
+    },
+    "fields": {
+      "username": "ชื่อผู้ใช้",
+      "password": "รหัสผ่าน",
+      "status": "สถานะ",
+      "serviceType": "ประเภทบริการ",
+      "groups": "กลุ่ม",
+      "groupsHint": "คั่นหลายกลุ่มด้วยเครื่องหมายจุลภาค เช่น pppoe-standard, staff",
+      "expiration": "วันหมดอายุ",
+      "replyAttributes": "Reply attributes"
+    },
+    "form": {
+      "createTitle": "เพิ่มผู้ใช้",
+      "editTitle": "แก้ไขผู้ใช้"
+    },
+    "detail": {
+      "tabs": {
+        "info": "ข้อมูล",
+        "reply": "Reply attributes",
+        "shaping": "Traffic shaping",
+        "sessions": "Sessions",
+        "authlog": "Auth log"
+      },
+      "summary": "สรุปข้อมูล",
+      "checkAttributes": "Check attributes",
+      "hasPassword": "ตั้งรหัสผ่านแล้ว",
+      "noPassword": "ยังไม่ได้ตั้งรหัสผ่าน",
+      "setPassword": "ตั้งรหัสผ่าน",
+      "newPassword": "รหัสผ่านใหม่",
+      "passwordChanged": "เปลี่ยนรหัสผ่านสำเร็จ",
+      "notFound": "ไม่พบผู้ใช้"
+    }
+  },
+  "groups": {
+    "title": "กลุ่ม",
+    "create": "เพิ่มกลุ่ม",
+    "searchPlaceholder": "ค้นหาชื่อกลุ่ม",
+    "confirmDelete": "ลบ attribute ทั้งหมดของกลุ่ม {{groupname}} ใช่หรือไม่? (สมาชิกใน radusergroup จะยังอยู่)",
+    "fields": {
+      "groupname": "ชื่อกลุ่ม",
+      "memberCount": "จำนวนสมาชิก",
+      "checkAttributes": "Check attributes",
+      "replyAttributes": "Reply attributes"
+    },
+    "form": {
+      "createTitle": "เพิ่มกลุ่ม",
+      "editTitle": "แก้ไขกลุ่ม"
+    }
+  },
+  "nas": {
+    "title": "NAS clients",
+    "create": "เพิ่ม NAS",
+    "searchPlaceholder": "ค้นหาชื่อ, shortname หรือคำอธิบาย",
+    "confirmDelete": "ลบ NAS {{name}} ใช่หรือไม่? ต้อง reload FreeRADIUS หลังจากนี้",
+    "reveal": "แสดง",
+    "reloadWarning": "ต้อง reload FreeRADIUS เพื่อให้การเปลี่ยนแปลงมีผล",
+    "helpTitle": "ตั้งค่า CoA/Disconnect บน MikroTik",
+    "helpText": "เปิดใช้งาน RADIUS dynamic authorization บน MikroTik แต่ละตัว โดยใช้ secret เดียวกับด้านล่าง:",
+    "fields": {
+      "nasname": "NAS name / IP",
+      "nasnameHint": "IP address, CIDR range หรือ hostname",
+      "shortname": "Short name",
+      "type": "ประเภท",
+      "secret": "Secret",
+      "description": "คำอธิบาย"
+    },
+    "form": {
+      "createTitle": "เพิ่ม NAS",
+      "editTitle": "แก้ไข NAS"
+    }
+  },
+  "profiles": {
+    "title": "Bandwidth Profiles",
+    "intro": "สร้าง traffic shaping profile (MikroTik และ/หรือ UniFi) แล้วนำไป apply กับกลุ่มหรือผู้ใช้ backend เป็นคนประกอบ attribute string ทั้งหมด ฟอร์มนี้แก้แค่ค่าตัวเลข/ตัวเลือกเท่านั้น",
+    "create": "เพิ่ม profile",
+    "searchPlaceholder": "ค้นหาชื่อ profile",
+    "confirmDelete": "ลบ profile {{name}} ใช่หรือไม่? ทำได้เฉพาะตอนที่ไม่มีใครใช้อยู่",
+    "confirmReapply": "Profile นี้ถูก apply อยู่กับ {{count}} กลุ่ม/ผู้ใช้ ต้องการ re-apply ค่าที่แก้ไปยังทุกเป้าหมายตอนนี้เลยไหม?",
+    "import": "นำเข้า",
+    "fields": {
+      "name": "ชื่อ",
+      "description": "คำอธิบาย",
+      "serviceType": "ประเภทบริการ",
+      "download_kbps": "ดาวน์โหลด",
+      "upload_kbps": "อัปโหลด",
+      "priority": "ความสำคัญ (1 สูงสุด – 8 ต่ำสุด)",
+      "burstEnabled": "เปิดใช้งาน Burst",
+      "burst_download_kbps": "Burst ดาวน์โหลด",
+      "burst_upload_kbps": "Burst อัปโหลด",
+      "burst_threshold_download_kbps": "Burst threshold ดาวน์โหลด",
+      "burst_threshold_upload_kbps": "Burst threshold อัปโหลด",
+      "burst_time_sec": "Burst time (วินาที)",
+      "min_download_kbps": "Min-rate ดาวน์โหลด",
+      "min_upload_kbps": "Min-rate อัปโหลด",
+      "session_timeout_sec": "Session timeout (วินาที)",
+      "idle_timeout_sec": "Idle timeout (วินาที)",
+      "simultaneous_use": "จำนวนเครื่องพร้อมกัน",
+      "quota_gb": "โควตารวม (GB)",
+      "address_list": "Mikrotik address-list",
+      "mikrotik_group": "Mikrotik-Group (profile บน router)",
+      "framed_pool": "Framed-Pool",
+      "unifi_filter_id": "ชื่อ UniFi Bandwidth Profile (Filter-Id)",
+      "shaping": "การจำกัดความเร็ว",
+      "is_active": "เปิดใช้งาน",
+      "targetCount": "ใช้งานอยู่กับ"
+    },
+    "sections": {
+      "rate": "จำกัดความเร็ว",
+      "burst": "Burst",
+      "limits": "ข้อจำกัดและอื่นๆ",
+      "import": "นำเข้าจาก Mikrotik-Rate-Limit string เดิม",
+      "unifi": "UniFi Network Controller"
+    },
+    "hints": {
+      "unlimited": "ปล่อยดาวน์โหลด/อัปโหลดว่างไว้เพื่อทำ profile แบบ Unlimited (ไม่ส่ง Mikrotik-Rate-Limit)",
+      "idleTimeout": "แนะนำสำหรับ Hotspot: 300–900 วินาที",
+      "framedPool": "ซ่อนสำหรับ profile แบบ Hotspot",
+      "unifiFilterId": "UniFi ไม่มี RADIUS attribute สำหรับจำกัดความเร็วโดยตรง — มันจะไปค้นหาค่าจำกัดความเร็วเองจากชื่อนี้ ต้องไปสร้าง Bandwidth Profile ชื่อตรงกันในหน้า UniFi Network Controller ก่อน (Settings > Profiles > Bandwidth Profiles) ไม่เช่นนั้นจะไม่มีผลใดๆ"
+    },
+    "preview": {
+      "title": "ตัวอย่าง (live preview)",
+      "reply": "Reply attributes",
+      "check": "Check attributes",
+      "noRateLimit": "(ไม่มี — Unlimited)",
+      "groupOperator": "หมายเหตุ: เมื่อ apply กับกลุ่ม reply attribute จะใช้ \"=\" เพื่อให้ค่าที่ตั้งเฉพาะ user ยังคงมีผลเหนือกว่า"
+    },
+    "form": {
+      "createTitle": "เพิ่ม profile",
+      "editTitle": "แก้ไข profile"
+    },
+    "apply": {
+      "button": "Apply",
+      "title": "Apply \"{{name}}\"",
+      "target": "Apply ไปยัง",
+      "targets": { "group": "กลุ่ม", "user": "ผู้ใช้" },
+      "name": "ชื่อ",
+      "nameHint": "ชื่อกลุ่มหรือชื่อผู้ใช้",
+      "replaceNotice": "การทำนี้จะแทนที่ shaping attribute เดิมของเป้าหมายทั้งหมด",
+      "submit": "Apply",
+      "success": "Apply ไปยัง {{name}} สำเร็จ",
+      "currentTargets": "กำลังใช้งานอยู่กับ",
+      "noTargets": "ยังไม่มีใครใช้ profile นี้"
+    }
+  },
+  "shaping": {
+    "effective": {
+      "source": "ที่มา",
+      "fromUser": "ผู้ใช้คนนี้",
+      "fromGroup": "กลุ่ม: {{group}}",
+      "explanation": "ค่าที่ตั้งเฉพาะ user จะทับค่าจากกลุ่ม attribute ด้านล่างคือค่าที่ user คนนี้ได้รับจริง",
+      "assignedProfiles": "Profile ที่ใช้งานอยู่",
+      "assignedVia": {
+        "user": "apply ตรงกับผู้ใช้คนนี้",
+        "group": "apply กับกลุ่ม {{name}}"
+      },
+      "noProfiles": "ยังไม่มี bandwidth profile ที่ apply ไว้",
+      "multipleShapingGroups": "ผู้ใช้คนนี้อยู่ในกลุ่ม {{service}} มากกว่า 1 กลุ่มที่ตั้งค่าจำกัดความเร็วไว้ — จะมีผลแค่กลุ่มเดียว"
+    }
+  },
+  "accounting": {
+    "title": "Accounting",
+    "export": "Export CSV",
+    "windowHint": "ถ้าไม่ระบุวันที่เริ่ม จะแสดงย้อนหลัง 7 วัน",
+    "detailTitle": "Session #{{id}}",
+    "fields": {
+      "radacctid": "Record ID",
+      "acctsessionid": "Session ID",
+      "acctuniqueid": "Unique ID",
+      "username": "ชื่อผู้ใช้",
+      "nasipaddress": "NAS IP",
+      "nasportid": "NAS Port",
+      "nasporttype": "NAS Port Type",
+      "servicetype": "Service Type",
+      "framedprotocol": "Framed Protocol",
+      "framedipaddress": "Framed IP",
+      "calledstationid": "Called Station ID",
+      "callingstationid": "Calling Station ID",
+      "acctstarttime": "เริ่ม",
+      "acctupdatetime": "อัปเดตล่าสุด",
+      "acctstoptime": "สิ้นสุด",
+      "acctsessiontime": "ระยะเวลา",
+      "download": "ดาวน์โหลด",
+      "upload": "อัปโหลด",
+      "acctterminatecause": "สาเหตุที่สิ้นสุด"
+    }
+  },
+  "sessions": {
+    "title": "Session ออนไลน์",
+    "online": "ออนไลน์",
+    "autoRefresh": "รีเฟรชอัตโนมัติทุก 15 วินาที",
+    "featuresDisabled": "ปุ่ม Disconnect และ Change speed ถูกปิดอยู่ (ENABLE_POD / ENABLE_COA ปิดอยู่)",
+    "tabs": { "all": "ทั้งหมด", "pppoe": "PPPoE", "hotspot": "Hotspot" },
+    "disconnect": "ตัดการเชื่อมต่อ",
+    "changeSpeed": "เปลี่ยนความเร็ว",
+    "confirmDisconnect": "ตัดการเชื่อมต่อของ {{username}} ตอนนี้เลยหรือไม่?",
+    "coa": {
+      "title": "เปลี่ยนความเร็ว — {{username}}",
+      "mode": "ตั้งความเร็วจาก",
+      "fromProfile": "Bandwidth profile",
+      "customRate": "กำหนดเอง",
+      "profile": "Profile",
+      "rateHint": "รูปแบบ: ดาวน์โหลด/อัปโหลด เช่น 20M/5M",
+      "submit": "ส่ง CoA"
+    }
+  },
+  "postauth": {
+    "title": "Auth Log",
+    "allReplies": "ทุกผลลัพธ์",
+    "fields": {
+      "authdate": "วันที่",
+      "username": "ชื่อผู้ใช้",
+      "reply": "ผลลัพธ์"
+    }
+  },
+  "audit": {
+    "title": "Audit Log",
+    "before": "ก่อนแก้ไข",
+    "after": "หลังแก้ไข",
+    "detailTitle": "Audit entry #{{id}}",
+    "fields": {
+      "createdAt": "วันที่",
+      "admin": "ผู้ดำเนินการ",
+      "action": "การกระทำ",
+      "resourceType": "ประเภท resource",
+      "resourceId": "Resource ID",
+      "ipAddress": "IP address"
+    }
+  },
+  "dashboard": {
+    "title": "แดชบอร์ด",
+    "recentSessions": "Session ล่าสุด",
+    "stats": {
+      "totalUsers": "ผู้ใช้ทั้งหมด",
+      "online": "ผู้ใช้ออนไลน์",
+      "onlineSessions": "{{count}} session",
+      "auth24h": "Auth สำเร็จ / ล้มเหลว (24 ชม.)",
+      "acceptReject": "สำเร็จ / ล้มเหลว",
+      "trafficToday": "Traffic วันนี้"
+    },
+    "traffic": {
+      "title": "Traffic ({{days}} วันล่าสุด)",
+      "download": "ดาวน์โหลด",
+      "upload": "อัปโหลด"
+    },
+    "auth": {
+      "title": "Auth สำเร็จ/ล้มเหลว ({{hours}} ชม.ล่าสุด)",
+      "accept": "สำเร็จ",
+      "reject": "ล้มเหลว"
+    }
+  },
+  "settings": {
+    "title": "ตั้งค่า",
+    "account": "บัญชี",
+    "language": "ภาษา",
+    "languages": { "th": "ไทย", "en": "English" },
+    "changePassword": "เปลี่ยนรหัสผ่าน",
+    "currentPassword": "รหัสผ่านปัจจุบัน",
+    "newPassword": "รหัสผ่านใหม่",
+    "newPasswordHint": "อย่างน้อย 8 ตัวอักษร",
+    "confirmPassword": "ยืนยันรหัสผ่านใหม่",
+    "passwordMismatch": "รหัสผ่านไม่ตรงกัน",
+    "passwordChanged": "เปลี่ยนรหัสผ่านสำเร็จ"
+  }
+}

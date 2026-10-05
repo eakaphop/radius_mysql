@@ -1,0 +1,23 @@
+-- Reference copy of the FreeRADIUS 3.x MySQL/MariaDB schema.
+--
+-- ⚠️ PLACEHOLDER — not filled in yet.
+--
+-- This file must be a verbatim copy of the schema actually used by the target
+-- FreeRADIUS install, taken from:
+--   <FREERADIUS_CONFIG_DIR>/mods-config/sql/main/mysql/schema.sql
+-- (e.g. /etc/freeradius/3.0/mods-config/sql/main/mysql/schema.sql on Debian/Ubuntu,
+--  or /etc/raddb/mods-config/sql/main/mysql/schema.sql on RHEL/Rocky)
+--
+-- This session has no access to the real target machine, so the file is left
+-- as a placeholder rather than reconstructed from memory — column types,
+-- indexes, and defaults must match the live database exactly, since the
+-- SQLAlchemy models in backend/app/db/models/ are written against the real
+-- tables and must never diverge from what FreeRADIUS itself expects.
+--
+-- To fill this in:
+--   1. Copy the file from the path above onto this machine, replacing this one.
+--   2. Also run `SHOW CREATE TABLE <table>\G` for radcheck, radreply,
+--      radusergroup, radgroupcheck, radgroupreply, radacct, radpostauth, nas
+--      on the live DB and diff against the packaged schema.sql — some installs
+--      customize columns/indexes over time.
+--   3. Record any differences found in docs/decisions.md.

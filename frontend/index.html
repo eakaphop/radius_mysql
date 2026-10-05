@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RADIUS Manager</title>
+    <script>
+      // Set the theme class before first paint to avoid a light/dark flash.
+      // Keep STORAGE_KEY in sync with frontend/src/app/ThemeProvider.tsx.
+      (function () {
+        try {
+          var STORAGE_KEY = "radius-manager.theme";
+          var stored = localStorage.getItem(STORAGE_KEY);
+          var dark = stored === "dark" || (stored !== "light" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {
+          // Storage unavailable — fall back to the default light theme.
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

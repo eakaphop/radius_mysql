@@ -1,0 +1,351 @@
+{
+  "app": {
+    "title": "RADIUS Manager"
+  },
+  "theme": {
+    "light": "Switch to light mode",
+    "dark": "Switch to dark mode"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "groups": "Groups",
+    "profiles": "Bandwidth Profiles",
+    "nas": "NAS",
+    "sessions": "Online Sessions",
+    "accounting": "Accounting",
+    "postauth": "Auth Log",
+    "audit": "Audit Log",
+    "settings": "Settings"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "remove": "Remove",
+    "close": "Close",
+    "search": "Search",
+    "details": "Details",
+    "from": "From",
+    "to": "To",
+    "required": "This field is required",
+    "invalid": "Invalid value",
+    "unknownError": "Something went wrong, please try again",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "table": {
+    "loading": "Loading...",
+    "empty": "No data found",
+    "error": "Failed to load data",
+    "total": "{{count}} total",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {{page}} / {{lastPage}}"
+  },
+  "attributes": {
+    "attribute": "Attribute",
+    "operator": "Operator",
+    "value": "Value",
+    "addRow": "Add row"
+  },
+  "serviceType": {
+    "pppoe": "PPPoE",
+    "hotspot": "Hotspot",
+    "both": "PPPoE + Hotspot",
+    "unknown": "Unknown"
+  },
+  "auth": {
+    "logout": "Log out",
+    "roles": {
+      "admin": "Admin",
+      "viewer": "Viewer"
+    },
+    "login": {
+      "title": "Sign in",
+      "username": "Username",
+      "password": "Password",
+      "submit": "Sign in",
+      "required": "This field is required",
+      "unknownError": "Sign in failed, please try again"
+    }
+  },
+  "users": {
+    "title": "RADIUS users",
+    "create": "Add user",
+    "enable": "Enable",
+    "disable": "Disable",
+    "changePassword": "Change password",
+    "searchPlaceholder": "Search username",
+    "groupFilterPlaceholder": "Filter by group",
+    "confirmDelete": "Delete user {{username}}? (accounting history is kept)",
+    "status": {
+      "all": "All statuses",
+      "active": "Active",
+      "disabled": "Disabled",
+      "expired": "Expired"
+    },
+    "fields": {
+      "username": "Username",
+      "password": "Password",
+      "status": "Status",
+      "serviceType": "Service type",
+      "groups": "Groups",
+      "groupsHint": "Separate multiple groups with commas, e.g. pppoe-standard, staff",
+      "expiration": "Expiration",
+      "replyAttributes": "Reply attributes"
+    },
+    "form": {
+      "createTitle": "Add user",
+      "editTitle": "Edit user"
+    },
+    "detail": {
+      "tabs": {
+        "info": "Info",
+        "reply": "Reply attributes",
+        "shaping": "Shaping",
+        "sessions": "Sessions",
+        "authlog": "Auth log"
+      },
+      "summary": "Summary",
+      "checkAttributes": "Check attributes",
+      "hasPassword": "Password is set",
+      "noPassword": "No password set",
+      "setPassword": "Set password",
+      "newPassword": "New password",
+      "passwordChanged": "Password changed",
+      "notFound": "User not found"
+    }
+  },
+  "groups": {
+    "title": "Groups",
+    "create": "Add group",
+    "searchPlaceholder": "Search group name",
+    "confirmDelete": "Delete all attributes of group {{groupname}}? (radusergroup memberships are kept)",
+    "fields": {
+      "groupname": "Group name",
+      "memberCount": "Members",
+      "checkAttributes": "Check attributes",
+      "replyAttributes": "Reply attributes"
+    },
+    "form": {
+      "createTitle": "Add group",
+      "editTitle": "Edit group"
+    }
+  },
+  "nas": {
+    "title": "NAS clients",
+    "create": "Add NAS",
+    "searchPlaceholder": "Search name, shortname or description",
+    "confirmDelete": "Delete NAS {{name}}? FreeRADIUS reload will be required.",
+    "reveal": "reveal",
+    "reloadWarning": "FreeRADIUS reload required for this change to take effect.",
+    "helpTitle": "MikroTik CoA/Disconnect setup",
+    "helpText": "On each MikroTik router, enable RADIUS dynamic authorization with the same secret as below:",
+    "fields": {
+      "nasname": "NAS name / IP",
+      "nasnameHint": "IP address, CIDR range, or hostname",
+      "shortname": "Short name",
+      "type": "Type",
+      "secret": "Secret",
+      "description": "Description"
+    },
+    "form": {
+      "createTitle": "Add NAS",
+      "editTitle": "Edit NAS"
+    }
+  },
+  "profiles": {
+    "title": "Bandwidth profiles",
+    "intro": "Build a traffic shaping profile (MikroTik and/or UniFi) and apply it to a group or user. All attribute strings are built by the backend — this form only edits plain fields.",
+    "create": "Add profile",
+    "searchPlaceholder": "Search profile name",
+    "confirmDelete": "Delete profile {{name}}? Only possible while it isn't applied anywhere.",
+    "confirmReapply": "This profile is applied to {{count}} group(s)/user(s). Re-apply the updated settings to all of them now?",
+    "import": "Import",
+    "fields": {
+      "name": "Name",
+      "description": "Description",
+      "serviceType": "Service type",
+      "download_kbps": "Download",
+      "upload_kbps": "Upload",
+      "priority": "Priority (1 highest – 8 lowest)",
+      "burstEnabled": "Enable burst",
+      "burst_download_kbps": "Burst download",
+      "burst_upload_kbps": "Burst upload",
+      "burst_threshold_download_kbps": "Burst threshold download",
+      "burst_threshold_upload_kbps": "Burst threshold upload",
+      "burst_time_sec": "Burst time (sec)",
+      "min_download_kbps": "Min-rate download",
+      "min_upload_kbps": "Min-rate upload",
+      "session_timeout_sec": "Session timeout (sec)",
+      "idle_timeout_sec": "Idle timeout (sec)",
+      "simultaneous_use": "Simultaneous use",
+      "quota_gb": "Total quota (GB)",
+      "address_list": "Mikrotik address-list",
+      "mikrotik_group": "Mikrotik-Group (router profile)",
+      "framed_pool": "Framed-Pool",
+      "unifi_filter_id": "UniFi Bandwidth Profile name (Filter-Id)",
+      "shaping": "Shaping",
+      "is_active": "Active",
+      "targetCount": "Applied to"
+    },
+    "sections": {
+      "rate": "Rate limit",
+      "burst": "Burst",
+      "limits": "Limits & extras",
+      "import": "Import existing Mikrotik-Rate-Limit string",
+      "unifi": "UniFi Network Controller"
+    },
+    "hints": {
+      "unlimited": "Leave download/upload empty for an Unlimited profile (no Mikrotik-Rate-Limit sent).",
+      "idleTimeout": "Recommended for Hotspot: 300–900 sec",
+      "framedPool": "Hidden for Hotspot profiles",
+      "unifiFilterId": "UniFi has no RADIUS rate-limit attribute — it looks up limits locally by name. Create a Bandwidth Profile with this exact name in the UniFi Network Controller (Settings > Profiles > Bandwidth Profiles) first, or this has no effect."
+    },
+    "preview": {
+      "title": "Live preview",
+      "reply": "Reply attributes",
+      "check": "Check attributes",
+      "noRateLimit": "(none — Unlimited)",
+      "groupOperator": "Note: when applied to a group, reply attributes use \"=\" so a per-user override still wins."
+    },
+    "form": {
+      "createTitle": "Add profile",
+      "editTitle": "Edit profile"
+    },
+    "apply": {
+      "button": "Apply",
+      "title": "Apply \"{{name}}\"",
+      "target": "Apply to",
+      "targets": { "group": "Group", "user": "User" },
+      "name": "Name",
+      "nameHint": "Group name or username",
+      "replaceNotice": "This replaces any existing shaping attributes on the target.",
+      "submit": "Apply",
+      "success": "Applied to {{name}}",
+      "currentTargets": "Currently applied to",
+      "noTargets": "Not applied to anything yet"
+    }
+  },
+  "shaping": {
+    "effective": {
+      "source": "Source",
+      "fromUser": "This user",
+      "fromGroup": "Group: {{group}}",
+      "explanation": "A user's own reply attributes override their group's. Attributes shown below are what the user actually receives.",
+      "assignedProfiles": "Assigned profiles",
+      "assignedVia": {
+        "user": "applied directly to this user",
+        "group": "applied to group {{name}}"
+      },
+      "noProfiles": "No bandwidth profile assigned",
+      "multipleShapingGroups": "This user is in more than one {{service}} group that sets a rate limit — only one will actually apply."
+    }
+  },
+  "accounting": {
+    "title": "Accounting",
+    "export": "Export CSV",
+    "windowHint": "Defaults to the last 7 days if no start date is set.",
+    "detailTitle": "Session #{{id}}",
+    "fields": {
+      "radacctid": "Record ID",
+      "acctsessionid": "Session ID",
+      "acctuniqueid": "Unique ID",
+      "username": "Username",
+      "nasipaddress": "NAS IP",
+      "nasportid": "NAS Port",
+      "nasporttype": "NAS Port Type",
+      "servicetype": "Service Type",
+      "framedprotocol": "Framed Protocol",
+      "framedipaddress": "Framed IP",
+      "calledstationid": "Called Station ID",
+      "callingstationid": "Calling Station ID",
+      "acctstarttime": "Start",
+      "acctupdatetime": "Last update",
+      "acctstoptime": "Stop",
+      "acctsessiontime": "Duration",
+      "download": "Download",
+      "upload": "Upload",
+      "acctterminatecause": "Terminate cause"
+    }
+  },
+  "sessions": {
+    "title": "Online sessions",
+    "online": "Online",
+    "autoRefresh": "Auto-refreshes every 15s",
+    "featuresDisabled": "Disconnect and Change speed are disabled (ENABLE_POD / ENABLE_COA are off).",
+    "tabs": { "all": "All", "pppoe": "PPPoE", "hotspot": "Hotspot" },
+    "disconnect": "Disconnect",
+    "changeSpeed": "Change speed",
+    "confirmDisconnect": "Disconnect {{username}} now?",
+    "coa": {
+      "title": "Change speed — {{username}}",
+      "mode": "Set speed from",
+      "fromProfile": "A bandwidth profile",
+      "customRate": "A custom rate",
+      "profile": "Profile",
+      "rateHint": "Format: download/upload, e.g. 20M/5M",
+      "submit": "Send CoA"
+    }
+  },
+  "postauth": {
+    "title": "Auth log",
+    "allReplies": "All replies",
+    "fields": {
+      "authdate": "Date",
+      "username": "Username",
+      "reply": "Reply"
+    }
+  },
+  "audit": {
+    "title": "Audit log",
+    "before": "Before",
+    "after": "After",
+    "detailTitle": "Audit entry #{{id}}",
+    "fields": {
+      "createdAt": "Date",
+      "admin": "Admin",
+      "action": "Action",
+      "resourceType": "Resource type",
+      "resourceId": "Resource ID",
+      "ipAddress": "IP address"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "recentSessions": "Recent sessions",
+    "stats": {
+      "totalUsers": "Total users",
+      "online": "Online users",
+      "onlineSessions": "{{count}} sessions",
+      "auth24h": "Auth accept / reject (24h)",
+      "acceptReject": "accept / reject",
+      "trafficToday": "Traffic today"
+    },
+    "traffic": {
+      "title": "Traffic (last {{days}} days)",
+      "download": "Download",
+      "upload": "Upload"
+    },
+    "auth": {
+      "title": "Auth accept/reject (last {{hours}}h)",
+      "accept": "Accept",
+      "reject": "Reject"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "account": "Account",
+    "language": "Language",
+    "languages": { "th": "ไทย", "en": "English" },
+    "changePassword": "Change password",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "newPasswordHint": "At least 8 characters",
+    "confirmPassword": "Confirm new password",
+    "passwordMismatch": "Passwords do not match",
+    "passwordChanged": "Password changed successfully"
+  }
+}
